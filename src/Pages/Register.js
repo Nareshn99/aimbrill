@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
-import toast from 'react-hot-toast';
+// import toast from 'react-hot-toast';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { Select, Radio } from "antd";
 import Layout from '../Component/Layout';
+import toast from 'react-toast-notification';
 const { Option } = Select;
 
 function Register() {

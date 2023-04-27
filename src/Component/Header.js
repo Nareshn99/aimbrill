@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import toast from 'react-hot-toast';
+import toast from 'react-toast-notification';
 
 function Header() {
   const [auth, setAuth] = useState(null);

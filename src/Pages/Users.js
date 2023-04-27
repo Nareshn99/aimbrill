@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Layout from '../Component/Layout'
-import toast from 'react-hot-toast';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-toast-notification';
 
 function Users() {
     const [users, SetUsers] = useState([])

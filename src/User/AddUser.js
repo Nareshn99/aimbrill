@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import toast from 'react-hot-toast';
+import toast from 'react-toast-notification';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { Select, Radio } from "antd";
