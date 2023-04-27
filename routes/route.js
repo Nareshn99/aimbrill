@@ -1,5 +1,6 @@
 import express from 'express';
 import { createUser, deleteUserById, getAllUsers, getUserById, login, updateUser } from '../controllers/userConroller.js';
+import { reqSignIn } from '../middlewares/userAuth.js';
 
 const router=express.Router();
 
@@ -11,16 +12,16 @@ router.post("/user",createUser);
 router.post("/login",login)
 
 //Get User By Id
-router.get("/user/:id",getUserById);
+router.get("/user/:id",reqSignIn,getUserById);
 
 //Get All Users
-router.get("/users",getAllUsers);
+router.get("/users",reqSignIn,getAllUsers);
 
 //Update User
-router.put("/user/:id",updateUser);
+router.put("/user/:id",reqSignIn,updateUser);
 
 //Delete User By Id
-router.delete("/user/:id",deleteUserById);
+router.delete("/user/:id",reqSignIn,deleteUserById);
 
 
 

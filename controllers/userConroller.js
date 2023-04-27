@@ -1,5 +1,5 @@
 import userModel from '../models/userModel.js';
-import { isValidEmail, isValidPassword } from '../utils/validation.js';
+import { isValidEmail } from '../utils/validation.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken'
 
@@ -22,8 +22,6 @@ export const createUser = async (req, res) => {
                 return res.status(400).send({ status: false, message: "Phone Is Mandatory" });
             case !Password:
                 return res.status(400).send({ status: false, message: "Password Is Mandatory" });
-            case !isValidPassword(Password):
-                return res.status(400).send({ status: false, message: "Weak Password,Minimum eight and maximum 15 characters, at least one uppercase letter, one lowercase letter, one number and one special character" })
             case !Gender:
                 return res.status(400).send({ status: false, message: "Gender Is Mandatory" });
             case !Country:
