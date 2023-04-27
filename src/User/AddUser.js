@@ -21,7 +21,7 @@ function AddUser() {
         e.preventDefault()
         try {
             const res = await axios.post("/api/user", { FirstName, LastName, Email, Phone, Password, Gender, Country })
-            if (res.data && res.data.status) {
+            if (res.data.status) {
                 toast.success(res.data.message)
                 navigate("/users")
             } else {

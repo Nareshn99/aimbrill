@@ -17,6 +17,7 @@ function Login() {
             if (res && res.data.status) {
                 toast.success(res.data.message)
                 localStorage.setItem("auth", JSON.stringify(res.data.data))
+                axios.defaults.headers.common['Authorization']=res?.data?.data?.token
                 navigate("/")
             } else {
                 toast.error(res.data.message)
